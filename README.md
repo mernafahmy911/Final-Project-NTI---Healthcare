@@ -1,4 +1,4 @@
-# 🏥 End-to-End Healthcare Fraud Detection Platform
+# 🏥 Healthcare Fraud Detection 
 
 ## 📌 Overview
 
