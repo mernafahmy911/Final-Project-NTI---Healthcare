@@ -1,188 +1,184 @@
+# 🏥 End-to-End Healthcare Fraud Detection Platform
 
-# 🏥 Healthcare Fraud Detection & Analytics Platform
+## 📌 Overview
 
-## 📌 Project Overview
+Healthcare fraud is a significant challenge that leads to financial losses, operational inefficiencies, and increased risks across healthcare systems. Detecting suspicious claims efficiently requires a combination of reliable data engineering, scalable analytics, and intelligent decision-making.
 
-Healthcare fraud continues to be one of the biggest challenges facing healthcare organizations, resulting in financial losses, operational inefficiencies, and increased risks for providers and insurers.
-
-This project delivers an end-to-end healthcare analytics and fraud detection platform that combines modern data engineering, cloud warehousing, machine learning, and business intelligence to identify suspicious claims, improve decision-making, and support proactive fraud prevention.
-
-The solution processes healthcare claims data through a scalable data pipeline, transforms raw records into trusted analytical datasets, and applies machine learning models to detect potentially fraudulent activities in near real time.
+This project presents an end-to-end healthcare fraud detection platform designed to transform raw healthcare claims data into trusted analytical assets, actionable insights, and real-time fraud alerts. The solution combines traditional data warehousing, modern cloud architectures, streaming pipelines, machine learning, and business intelligence into a unified ecosystem.
 
 ---
 
-## 🎯 Business Objectives
+## 🎯 Project Objectives
 
-* Detect potentially fraudulent healthcare claims.
-* Improve visibility into provider and claim behavior.
-* Enable data-driven decision-making through interactive dashboards.
-* Reduce revenue leakage and financial losses.
-* Build a scalable and modern healthcare analytics platform.
-
----
-
-## 🏗 Solution Architecture
-
-The platform follows a modern healthcare data architecture that integrates batch and real-time data processing.
-
-### Data Flow
-
-1. Raw healthcare data is collected from multiple sources.
-2. Data is ingested through automated pipelines.
-3. Data quality and transformation processes are applied.
-4. Curated datasets are stored in a cloud data warehouse.
-5. Machine learning models evaluate fraud risk.
-6. Dashboards and reports provide business insights.
-7. Automated alerts notify stakeholders of suspicious activities.
+* Centralize healthcare claims data from multiple sources.
+* Build scalable batch and streaming data pipelines.
+* Enable reliable analytics and reporting.
+* Detect potentially fraudulent claims using machine learning.
+* Generate real-time fraud alerts.
+* Support data-driven decision-making for healthcare stakeholders.
 
 ---
 
-## 🔄 Data Engineering Pipeline
+# 🏗 Solution Architecture
 
-A robust ELT architecture was implemented to ensure reliable and scalable data processing.
+The platform was implemented through three complementary architectures to demonstrate different approaches to modern data engineering.
 
-### Key Capabilities
+## 1️⃣ Data Warehouse Solution
 
-* Automated data ingestion
-* Data cleansing and validation
-* Data standardization
-* Incremental processing
-* Workflow orchestration
-* Data quality monitoring
-* Historical data tracking
-* Scalable cloud-based storage
+A traditional data warehouse was designed using dimensional modeling principles to support analytical reporting and historical analysis.
+
+### Key Components
+
+* SSIS ETL Pipelines
+* SQL Server Staging Layer
+* Data Cleansing & Validation
+* Dimensional Modeling
+* Star Schema Design
+
+📷 *Add Data Warehouse Architecture Image Here*
+
+📷 *Add Star Schema Image Here*
 
 ---
 
-## 🗄 Data Warehouse
+## 2️⃣ Real-Time Streaming Solution
 
-A dimensional data warehouse was designed to support healthcare analytics and fraud investigations.
+To support continuous data ingestion and near real-time processing, a streaming architecture was implemented.
+
+### Key Components
+
+* FastAPI Data Ingestion Service
+* Apache Kafka Streaming Platform
+* Snowflake Cloud Data Warehouse
+* dbt Data Transformations
+* Apache Airflow Orchestration
 
 ### Benefits
 
-* Optimized analytical performance
-* Simplified reporting structure
-* Historical trend analysis
+* Continuous data ingestion
+* Automated transformations
+* Scalable cloud architecture
+* Reliable workflow orchestration
+
+📷 *Add Kafka → Snowflake → dbt Architecture Image Here*
+
+---
+
+## 3️⃣ Lakehouse Architecture
+
+A modern Medallion Architecture was implemented using Databricks and Delta Lake.
+
+### Bronze Layer
+
+* Raw healthcare claims data
+
+### Silver Layer
+
+* Cleansed and validated datasets
+* Deduplication and quality checks
+
+### Gold Layer
+
+* Business-ready analytical datasets
+* Optimized for reporting and advanced analytics
+
+📷 *Add Databricks Medallion Architecture Image Here*
+
+---
+
+# 📊 Business Intelligence
+
+Interactive dashboards were developed using Power BI to provide visibility into healthcare operations and fraud monitoring.
+
+### Dashboard Capabilities
+
+* Claims analysis
 * Provider performance monitoring
-* Fraud investigation support
-* Executive-level reporting
+* Fraud risk tracking
+* Trend analysis
+* Executive KPI reporting
+
+📷 *Add Power BI Dashboard Screenshots Here*
 
 ---
 
-## ⚙ Feature Engineering
+# 🤖 Machine Learning Fraud Detection
 
-Feature engineering techniques were applied to transform healthcare claims data into meaningful analytical variables.
+A machine learning model was developed to identify potentially fraudulent healthcare claims and support proactive fraud investigation.
 
-The process focused on:
+## Feature Engineering
 
-* Data preparation
-* Variable transformation
-* Data enrichment
-* Feature selection
-* Noise reduction
-* Model optimization
+Feature engineering techniques were applied to prepare and optimize the dataset for model training.
 
-Recursive Feature Elimination (RFE) was utilized to improve model effectiveness and identify the most valuable predictive signals.
+**Recursive Feature Elimination (RFE)** was used to evaluate feature importance and select the most relevant predictors, helping improve model performance while reducing unnecessary complexity.
 
----
+## Model Development
 
-## 🤖 Machine Learning
-
-Several machine learning approaches were evaluated to classify healthcare claims and identify suspicious patterns.
-
-### Model Development Process
+The machine learning workflow included:
 
 * Data preprocessing
 * Feature engineering
+* Feature selection using RFE
 * Model training
-* Hyperparameter tuning
-* Performance evaluation
-* Model selection
+* Model evaluation
+* Fraud probability scoring
 
-### Evaluation Metrics
+## Outcomes
 
-* Accuracy
-* Precision
-* Recall
-* F1 Score
-* ROC-AUC
+The model generates fraud risk scores that help identify suspicious claims and prioritize investigations more effectively.
 
-The selected model provides reliable fraud detection performance while maintaining a balance between false positives and false negatives.
+📷 *Add Model Performance / RFE Results Image Here*
 
 ---
 
-## 🚨 Fraud Detection Framework
+# 🚨 Automated Fraud Alerting
 
-The platform is designed to identify abnormal claim behavior and potential fraud indicators through predictive analytics.
+To operationalize fraud detection, the machine learning model was integrated into an automated alerting workflow.
 
-### Fraud Monitoring Capabilities
+## Workflow
 
-* Suspicious claim detection
-* Provider risk analysis
-* Behavioral anomaly detection
-* Automated risk scoring
-* Real-time alert generation
+1. Claim data is submitted for evaluation.
+2. The machine learning model predicts fraud probability.
+3. n8n orchestrates the automation workflow.
+4. Fraud alerts are generated automatically.
+5. Results are delivered through a Telegram Bot.
 
----
+## Benefits
 
-## 📊 Business Intelligence & Reporting
+* Near real-time fraud detection
+* Automated alert generation
+* Faster investigation workflows
+* Improved operational response
 
-Interactive dashboards were developed to provide stakeholders with actionable insights.
+📷 *Add n8n Workflow Screenshot Here*
 
-### Dashboard Highlights
-
-* Fraud risk overview
-* Claims performance analysis
-* Provider analytics
-* Geographic distribution analysis
-* Trend monitoring
-* Executive KPI tracking
+📷 *Add Telegram Bot Screenshot Here*
 
 ---
 
-## 🛠 Technology Stack
+# 🛠️ Technology Stack
 
-| Category               | Technology     |
-| ---------------------- | -------------- |
-| ETL                    | SSIS           |
-| Database               | SQL Server     |
-| Cloud Data Warehouse   | Snowflake      |
-| Data Transformation    | dbt            |
-| Workflow Orchestration | Apache Airflow |
-| Lakehouse Processing   | Databricks     |
-| API Layer              | FastAPI        |
-| Business Intelligence  | Power BI       |
-| Automation & Alerts    | n8n            |
-| Machine Learning       | Python         |
-
----
-
-## 📈 Project Outcomes
-
-* Built a scalable healthcare analytics platform.
-* Automated data ingestion and transformation workflows.
-* Centralized healthcare data into a modern warehouse.
-* Enabled fraud detection using machine learning.
-* Delivered executive dashboards for business users.
-* Improved visibility into operational and financial risks.
-* Established a foundation for real-time fraud monitoring.
+| Category         | Technology     |
+| ---------------- | -------------- |
+| ETL              | SSIS           |
+| Database         | SQL Server     |
+| Streaming        | Apache Kafka   |
+| API              | FastAPI        |
+| Data Warehouse   | Snowflake      |
+| Transformation   | dbt            |
+| Orchestration    | Apache Airflow |
+| Lakehouse        | Databricks     |
+| Storage          | Delta Lake     |
+| Machine Learning | Python         |
+| Model Serving    | Flask          |
+| Automation       | n8n            |
+| Notifications    | Telegram Bot   |
+| Visualization    | Power BI       |
 
 ---
 
-## 🚀 Future Enhancements
+## 🎓 About This Project
 
-* Advanced anomaly detection models.
-* Real-time streaming analytics.
-* Explainable AI for fraud investigations.
-* Automated case management workflows.
-* Enhanced predictive healthcare analytics.
+This project was completed as the **Final Project of the Data Engineering Track at the National Telecommunication Institute (NTI)**.
 
----
-
-## 👨‍💻 Author
-
-**Merna Medhat**
-
-Data Engineer | Analytics Engineer | BI Developer
-
-Building modern data platforms that transform raw data into actionable business intelligence.
+It demonstrates the integration of Data Engineering, Data Warehousing, Cloud Analytics, Business Intelligence, and Machine Learning concepts within a production-style healthcare fraud detection platform.
